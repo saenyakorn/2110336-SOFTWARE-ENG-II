@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2110336_SOFTWARE_ENG_II_Final_Summary.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<style>
+  * {
+    line-height: 1.8;
+  }
+  body {
+    padding: 24px;
+    max-width: 720px;
+    margin: auto;
+  }
+  .img-container {
+  	display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 1rem;
+  }
+  .img-container img {
+    object-fit: contain;
+    flex: 1;
+    overflow: hidden;
+  }
+</style>
+<h1 id="2110336-software-eng-ii---final-summary----omit-in-toc">2110336 SOFTWARE ENG II - Final Summary <!-- omit in toc --></h1>
+<p>สรุป Final วิชา 2110336 Software Engineering II โดย แสนยากร เสียงเสนาะ</p>
+<p>ปล. เอาจริง ๆ ไม่ควรจะเรียกว่า Summary เพราะ detail มากเกินไป อีกเรื่องหนึ่งคือน่าจะมีพิมพ์ผิดเยอะด้วยความรีบ หรืออาจจะมีจุดที่ไม่ค่อยเคลียร์ หากเจอโปรดแจ้งให้ทราบด้วย</p>
+<h2 id="course-playlist----omit-in-toc">Course Playlist <!-- omit in toc --></h2>
+<a href='https://youtu.be/dQw4w9WgXcQ' style="margin-right:2em">
+  Playlist 1
+</a>
+<a href='https://youtube.com/playlist?list=PLzFuNE9WxQxguQdEsvGT0IPBDbvVcCFGF'>
+  Playlist 2
+</a>
+<h1 id="examination-contents----omit-in-toc">Examination Contents <!-- omit in toc --></h1>
+<p>Part A (10 points)</p>
+<ul>
+<li>
+<p><a href="#bad-smell-and-refactoring">Bad Smell and Refactoring</a></p>
+</li>
+<li>
+<p><a href="#map-to-code">Map to code</a></p>
+</li>
+<li>
+<p><a href="#uml-profile-for-rest-api">UML Profile for REST API</a></p>
+</li>
+</ul>
+<p>Part B (25 points)</p>
+<ul>
+<li><a href="#software-testing">Software Testing</a></li>
+</ul>
+<p>Part C (25 points)</p>
+<ul>
+<li>
+<p><a href="#cicd">CI/CD</a></p>
+</li>
+<li>
+<p><a href="#docker">Docker</a></p>
+</li>
+<li>
+<p><a href="#design-for-security">Design for security</a></p>
+</li>
+</ul>
+<p>Part D (10 points)</p>
+<ul>
+<li>
+<p><a href="#software-configuration-mangement">Software Configuration Mangement</a></p>
+</li>
+<li>
+<p><a href="#software-maintenance">Software Maintenance</a></p>
+</li>
+</ul>
+<h1 id="table-of-contents----omit-in-toc">Table of Contents <!-- omit in toc --></h1>
+<ul>
+<li><a href="#bad-smell-and-refactoring">Bad Smell and Refactoring</a>
+<ul>
+<li><a href="#duplicate-code">Duplicate Code</a></li>
+<li><a href="#long-method">Long Method</a></li>
+<li><a href="#temporary-variables">Temporary Variables</a></li>
+<li><a href="#long-parameter-list">Long Parameter List</a></li>
+<li><a href="#large-class">Large Class</a></li>
+<li><a href="#feature-envy">Feature Envy</a></li>
+<li><a href="#lazy-class">Lazy Class</a></li>
+<li><a href="#middle-man">Middle Man</a></li>
+<li><a href="#data-class">Data Class</a></li>
+<li><a href="#comment">Comment</a></li>
+</ul>
+</li>
+<li><a href="#cicd">CI/CD</a>
+<ul>
+<li><a href="#devops-culture">DevOps Culture</a>
+<ul>
+<li><a href="#calms-for-devops">CALMS For DevOps</a></li>
+<li><a href="#devtools">Devtools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#docker">Docker</a>
+<ul>
+<li><a href="#compare-to-virtual-machine">Compare to Virtual Machine</a></li>
+<li><a href="#host-port-vs-container-port">Host Port vs Container Port</a></li>
+</ul>
+</li>
+<li><a href="#design-for-security">Design for Security</a></li>
+<li><a href="#software-testing">Software Testing</a>
+<ul>
+<li><a href="#white-box-testing">White-box Testing</a>
+<ul>
+<li><a href="#coverage-criteria">Coverage Criteria</a></li>
+<li><a href="#control-flow-graph">Control Flow Graph</a>
+<ul>
+<li><a href="#mccabes-cyclomatic-complexity-c">McCabe's Cyclomatic Complexity (C)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#black-box-testing">Black-box Testing</a>
+<ul>
+<li><a href="#equivalence-classes-partitioning">Equivalence classes partitioning</a></li>
+<li><a href="#boundary-value-analysis">Boundary value analysis</a></li>
+<li><a href="#decision-table">Decision Table</a></li>
+</ul>
+</li>
+<li><a href="#verification--validation">Verification &amp; Validation</a></li>
+<li><a href="#strategy">Strategy</a>
+<ul>
+<li><a href="#unit-test">Unit Test</a></li>
+<li><a href="#integration-test">Integration Test</a></li>
+<li><a href="#system-testing">System Testing</a>
+<ul>
+<li><a href="#requirement-based-functional-tests">Requirement-based Functional Tests</a></li>
+</ul>
+</li>
+<li><a href="#acceptance-testing">Acceptance Testing</a></li>
+<li><a href="#alpha-test">Alpha Test</a></li>
+<li><a href="#beta-test">Beta Test</a></li>
+<li><a href="#regression-test">Regression Test</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#software-configuration-mangement">Software Configuration Mangement</a>
+<ul>
+<li><a href="#sources-of-changes">Sources of Changes</a></li>
+<li><a href="#baselines">Baselines</a></li>
+<li><a href="#software-configuration-items">Software Configuration Items</a></li>
+<li><a href="#baseline-scis">Baseline SCIs</a></li>
+<li><a href="#identification-of-object-in-the-software-configuration">Identification of Object in the Software Configuration</a></li>
+<li><a href="#change-control-process">Change Control Process</a></li>
+<li><a href="#software-configuration-audit">Software Configuration Audit</a></li>
+</ul>
+</li>
+<li><a href="#software-maintenance">Software Maintenance</a>
+<ul>
+<li><a href="#corrective-maintenace">Corrective Maintenace</a></li>
+<li><a href="#adaptive-maintenace">Adaptive Maintenace</a></li>
+<li><a href="#perfective-maintenace">Perfective Maintenace</a></li>
+<li><a href="#preventive-maintenace">Preventive Maintenace</a></li>
+<li><a href="#who-perform-maintenance">Who perform maintenance</a></li>
+</ul>
+</li>
+<li><a href="#map-to-code">Map to code</a>
+<ul>
+<li><a href="#optimizing-the-object-desing-model">Optimizing the Object Desing Model</a></li>
+<li><a href="#mapping-association-to-collections">Mapping Association to Collections</a></li>
+<li><a href="#summary">Summary</a></li>
+</ul>
+</li>
+<li><a href="#uml-profile-for-rest-api">UML Profile for REST API</a></li>
+</ul>
+<!-- ############################################# -->
+<h2 id="bad-smell-and-refactoring">Bad Smell and Refactoring</h2>
+<blockquote>
+<p>Refactoring คือการจัดเรียงหรือจัดระเบียบ code ใหม่ เพื่อป้องกันปัญหาที่อาจจะเกิดในอนาคต โดยเมืื่อแก้แล้วจะระบบจะต้องสามารถทำงานได้เหมือนเดิม</p>
+</blockquote>
+<blockquote>
+<p>Bad Smell (Code Smell) คือเมื่อตรวจสอบ source code แล้วได้กลิ่นแปลก ๆ (สิ่งที่อาจจะก่อให้เกิดปัญหาในอนาคต) เมื่อพบแล้วจะต้องทำ refactoring ต่อไป</p>
+</blockquote>
+<p>Bad Smell ถูกนิยามไว้ 22 แบบและ Refactoring ถูกนิยามไว้ 72 แต่จะเรียนแค่บางแบบดังนี้</p>
+<div style="page-break-after: always;"></div>
+<h3 id="duplicate-code">Duplicate Code</h3>
+<div class="img-container">
+  <img src="https://refactoring.guru/images/refactoring/content/smells/duplicate-code-01-2x.png"/>
+  <img src="https://refactoring.guru/images/refactoring/content/smells/duplicate-code-02-2x.png"/>
+</div>
+<p>&quot;กลิ่นแรงสุด&quot;</p>
+<p>คือการเขียน code ซ้ำกันหลาย ๆ แห่ง</p>
+<p>แก้ได้ด้วย <strong>Extract Method</strong></p>
+<blockquote>
+<p><strong>Extract Method</strong> คือวิธีการนำ code ที่ซ้ำกัน แยกออกเป็น Method ใหม่แล้วเรียกใช้ Method นี้แทน</p>
+</blockquote>
+<pre class="hljs"><code><div>sum_a = <span class="hljs-number">0</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(arr_a)):
+  sum_a += arr_a[i]
+
+sum_b = <span class="hljs-number">0</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(arr_b)):
+  sum_b += arr_b[i]
+</div></code></pre>
+<p>แก้เป็น</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># extracted function/method</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_sum</span><span class="hljs-params">(arr)</span>:</span>
+  s = <span class="hljs-number">0</span>
+  <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(arr))
+    s += arr[i]
+  <span class="hljs-keyword">return</span> a
+
+sum_a = get_sum(arr_a)
+sum_b = get_sum(arr_b)
+</div></code></pre>
+<h3 id="long-method">Long Method</h3>
+<div class="img-container">
+  <img src="https://refactoring.guru/images/refactoring/content/smells/long-method-01-2x.png"/>
+  <img src="https://refactoring.guru/images/refactoring/content/smells/long-method-02-2x.png"/>
+</div>
+<p>คือ method หรือ function ที่ยาวมาก ๆ (ยาวมากแค่ไหนขึ้นอยู่กับผู้เขียน) ส่วนมากจะพิจารณาโดยคำนึงเรื่อง maintenance</p>
+<p>หนึ่ง function / method ควรทำหน้าที่แค่อย่างเดียว</p>
+<p>แก้ได้โดนการใช้ <strong>Extract Method</strong></p>
+<blockquote>
+<p><strong>Extract Method</strong> คือวิธีการนำ code ที่ซ้ำกัน แยกออกเป็น Method ใหม่แล้วเรียกใช้ Method นี้แทน</p>
+</blockquote>
+<h3 id="temporary-variables">Temporary Variables</h3>
+<p>คือมีการใช้ตัวแปรชั่วคราวมากเกินไป อาจทำให้เกิด dependency ได้</p>
+<p>แก้ได้โดนการใช้ <strong>Replace Temp With Query</strong></p>
+<blockquote>
+<p><strong>Replace Temp With Query</strong> คือการแทนที่ด้วยการ call ไปเลยไม่ต้องมีตัวแปรชั่วคราว</p>
+</blockquote>
+<pre class="hljs"><code><div>basePrice = quantity * itemPrice
+<span class="hljs-keyword">if</span> basePrice &gt; <span class="hljs-number">1000</span>: <span class="hljs-keyword">return</span> basePrice * <span class="hljs-number">0.95</span>
+<span class="hljs-keyword">return</span> basePrice * <span class="hljs-number">0.98</span>
+</div></code></pre>
+<p>แก้เป็น</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">if</span> getBasePrice() &gt; <span class="hljs-number">1000</span>: <span class="hljs-keyword">return</span> getBasePrice() * <span class="hljs-number">0.95</span>
+<span class="hljs-keyword">return</span> getBasePrice() * <span class="hljs-number">0.98</span>
+</div></code></pre>
+<p>แต่อาจเกิดปัญหาเรื่อง Performance เพราะต้อง query ของเดิมซ้ำ ๆ</p>
+<h3 id="long-parameter-list">Long Parameter List</h3>
+<div class="img-container">
+  <img src="https://refactoring.guru/images/refactoring/content/smells/long-parameter-list-01-2x.png"/>
+  <img src="https://refactoring.guru/images/refactoring/content/smells/long-parameter-list-02-2x.png"/>
+</div>
+<p>คือ method มี parameter เยอะเกินไป ซึ่งยากต่อการใช้งาน</p>
+<p>แก้ได้โดนการใช้ <strong>Introduction Parameter Object</strong> หรือ <strong>Replace Parameter With Method</strong></p>
+<blockquote>
+<p><strong>Introduction Parameter Object</strong> คือการเอา parameter รวมกันเป็น object</p>
+</blockquote>
+<blockquote>
+<p><strong>Replace Parameter With Method</strong> คือการตัด parameter บางอย่างออกแล้วไปคำนวณข้างในแทน</p>
+</blockquote>
+<pre class="hljs"><code><div>price = quantity * itemPrice
+discountLevel = getDiscountLevel(price)
+finalPrice = discountedPrice(price, discountLevel)
+</div></code></pre>
+<pre class="hljs"><code><div>price = quantity * itemPrice
+finalPrice = discountedPrice(price)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">discountedPrice</span><span class="hljs-params">(price)</span>:</span>
+  discountLevel = getDiscountLevel(price)
+  <span class="hljs-comment"># ...</span>
+</div></code></pre>
+<h3 id="large-class">Large Class</h3>
+<div class="img-container">
+  <img src="https://refactoring.guru/images/refactoring/content/smells/large-class-01-2x.png"/>
+  <img src="https://refactoring.guru/images/refactoring/content/smells/large-class-02-2x.png"/>
+</div>
+<p>คือคลาสใหญ่เกินไป มีหลาย method และตัวแปรมากเกินไป</p>
+<p>แก้ได้โดนการใช้ <strong>Extract Class</strong></p>
+<blockquote>
+<p><strong>Extract Class</strong> คือวิธีการนำ methods / variables ที่ไม่ค่อยเกี่ยวข้องกันแยกออกไปเป็น class หรือ class ย่อย</p>
+</blockquote>
+<h3 id="feature-envy">Feature Envy</h3>
+<div class="img-container">
+  <img src="https://refactoring.guru/images/refactoring/content/smells/feature-envy-01-2x.png"/>
+  <img src="https://refactoring.guru/images/refactoring/content/smells/feature-envy-02-2x.png"/>
+</div>
+<p>คือ method ใน class A ไปเรียกใช้ method ใน class B ทำให้ method ใน class A รู้สึก &quot;อิจฉา&quot;</p>
+<p>แก้ได้โดนการใช้ <strong>Move Method</strong></p>
+<blockquote>
+<p><strong>Move Method</strong> คือการย้าย method ที่มีการเรียก method จาก class อื่นเยอะ ๆ ให้ย้ายไปเป็น method ของ class นั้นแทนเลย</p>
+</blockquote>
+<h3 id="lazy-class">Lazy Class</h3>
+<div class="img-container">
+  <img src="https://refactoring.guru/images/refactoring/content/smells/lazy-class-01-2x.png"/>
+  <img src="https://refactoring.guru/images/refactoring/content/smells/lazy-class-02-2x.png"/>
+</div>
+<p>คือ class ที่ไม่ค่อยได้ทำอะไร</p>
+<p>แก้ได้โดนการใช้ <strong>Collapse Hierachy</strong></p>
+<blockquote>
+<p><strong>Collapse Hierachy</strong> คือรวมเข้ากับคลาสที่ inherit มา</p>
+</blockquote>
+<h3 id="middle-man">Middle Man</h3>
+<div class="img-container">
+  <img src="https://refactoring.guru/images/refactoring/content/smells/middle-man-01-2x.png"/>
+  <img src="https://refactoring.guru/images/refactoring/content/smells/middle-man-02-2x.png"/>
+</div>
+<p>โดยทั่วไป middle man หมายถึงคนกลาง ทำหน้าที่รับ จากนั้นแปลง แล้วค่อยส่งต่อ (อันนั้นจะเรียกว่า Adaptor) แต่บางทีอาจจะมี middle man ที่ไม่ได้ทำอะไรมากมายขนาดนั้น</p>
+<p>แก้ได้โดนการใช้ <strong>Remove Middle Man</strong></p>
+<blockquote>
+<p><strong>Remove Middle Man</strong> ก็คือให้มันต่อตรงเลย แล้วลบ middle man ออก</p>
+</blockquote>
+<h3 id="data-class">Data Class</h3>
+<p>data class คือ class เก็บแต่ attributes หรือมีแต่ getter / setter</p>
+<p>&quot;กลิ่นน้อย&quot;</p>
+<p>เป็น bad smell ที่ data class มีหน้าที่อย่างอื่นมากกว่าแค่เก็บตัวแปร</p>
+<p>แก้ได้โดนการใช้ <strong>Extract/Move Method</strong></p>
+<h3 id="comment">Comment</h3>
+<p>&quot;กลิ่นน้อย&quot;</p>
+<p>คือ comment ทั่ว ๆ ไป แต่ถ้าหากมี comment นั่นหมายความว่ามันเริ่มซับซ้อนแล้ว นั่นคือจุดที่เราสามารถ extract ได้</p>
+<p>แก้ได้โดนการใช้ <strong>Extract Method/Variable</strong></p>
+<!-- ############################################# -->
+<h2 id="cicd">CI/CD</h2>
+<blockquote>
+<p><strong>CI (Continuous Integration)</strong> - ช่วยเรื่องการ build และ test ด้วย automation ซึ่งทำได้บ่อย ๆ และช่วยให้ได้ feedback จาก user ได้เร็วขึ่้น รวมถึงสามารถหาบัคได้เร็วขึ้นด้วย รวมกันเป็น Agile Menifesto (สรุป คือ Build, Test, Merge)</p>
+</blockquote>
+<blockquote>
+<p><strong>CD (Countinuos Delivery)</strong> - หลังจากผ่าน​ CI แล้วจะส่ง Code ที่ตรวจสอบ (หรือเรียกว่า Change) แล้วเข้าไปที่ Repository และ Deploy ขึ้น Production ได้เลย แต่ทีม Developer สามารถเลือกได้ว่าจะเอาขึ้นหรือไม่ขึ้น</p>
+</blockquote>
+<blockquote>
+<p><strong>CD (Countinuos Deployment)</strong> - ขยายมาจาก Countinuos Delivery คือทำหน้าที่ Deploy Code จาก Repository ขึ้นไปบน Production Environment แบบอัตโนมัติสำหรับทุก Change</p>
+</blockquote>
+<h3 id="devops-culture">DevOps Culture</h3>
+<p>คือการร่วมมือกันของ Dev กับ Ops โดย Developer จะหมายถึงคนเขียน Code และ Operator จะหมายถึงคนทำหน้าที่ Deploy ซึ่งโดยส่วนมาก เมื่อก่อน Dev กับ Ops ทำงานไม่คุยกัน ทำงานแบบ Silo ทำให้ทำงานได้ช้า ดังนั้นการทำ DevOps เลยพ่วงมากับการทำ CI/CD ด้วย</p>
+<p><img src="https://technology.pl-inetum.group/wp-content/uploads/2020/11/cykl-devops-cycle.png" alt=""></p>
+<h5 id="calms-for-devops">CALMS For DevOps</h5>
+<ol>
+<li>Culture
+<ol>
+<li>Collaboration</li>
+<li>Cross-functional Collaboration</li>
+</ol>
+</li>
+<li>Automation
+<ol>
+<li>CD</li>
+<li>Automation Tests</li>
+<li>Automation deploys</li>
+<li>Configuration as Code (GitOps)</li>
+</ol>
+</li>
+<li>Lean
+<ol>
+<li>Continuous Improvement</li>
+<li>Begin Agile</li>
+<li>Eliminate low-value activities</li>
+<li>Embracing failure</li>
+</ol>
+</li>
+<li>Messurement
+<ol>
+<li>How long dev to deploy?</li>
+<li>How often detech bug and failure?</li>
+<li>How many using our product?</li>
+</ol>
+</li>
+<li>Sharing
+<ol>
+<li>Sharing knowlegde and problems</li>
+</ol>
+</li>
+</ol>
+<h4 id="devtools">Devtools</h4>
+<p>มีให้ใช้หลายอย่างมาก แต่การใช้จะได้ทั้งทีมต้องมี mindset แบบ DevOps เสียก่อน!!!</p>
+<!-- ############################################# -->
+<h2 id="docker">Docker</h2>
+<p>อ้างอิง <a href="#cicd">CI/CD</a> เรื่อง Docker จะเกี่ยวข้องกับ Phase <strong>Deploy and Operate</strong></p>
+<p>เวลาจะ build app ด้วย Docker เวลาเราสั่ง <code>docker build .</code> มันจะไปอ่าน Dockerfile จากนั้นก็จะ execute ทีละคำสั่งใน Dockerfile (เรียกว่า Layer) จากนั้นจะได้ Docker Image ออกมา</p>
+<p>จากนั้นเราจะสามารถเอา Docker image ไปรับจริง ๆ บนเครื่องของเราได้ ด้วย <code>docker run &lt;image-name&gt;</code> ซึ่งจะได้ออกมาเป็น Docker container</p>
+<p>นอกจากนี้เราสามารถเอา Docker image ไปขึ้น Hub เช่น Docker Hub, Github Container Registry ได้เพื่อให้คนอื่น ๆ มาใช้ image เราได้</p>
+<p>Docker ช่วยให้เราสามารถรัน App โดยได้ผลลัพธ์เหมือน ๆ กันโดยไม่ขึ้นอยู่กับ OS ของ Host หรือก็คือเราสามารถเอา Docker image ไปรันได้ในหลาย ๆ Host Environment และไม่ต้อง Configure Host เลย</p>
+<h3 id="compare-to-virtual-machine">Compare to Virtual Machine</h3>
+<p><img src="https://race.nstru.ac.th/home_ex/blog/user/data/image/4200/Blog.-Are-containers-..VM-Image-1.jpg" alt=""></p>
+<p>หลัก ๆ จะต่างกันตรงที่ Docker container จะรันบน Docker daemon ซึ่งต่อกับ Host OS โดยตรง ในขณะที่ VM จะสร้าง Guest OS (ของใครของมัน) ขึ้นมาและเอา app ไปรันบน Guest OS นั้นซึ่งใช้ทรัพยากรมากกว่า</p>
+<h3 id="host-port-vs-container-port">Host Port vs Container Port</h3>
+<p><img src="https://tecadmin.net/tutorial/wp-content/uploads/2017/09/Docker-port-binding.png" alt=""></p>
+<p>จากรูป จะหมายความว่า Container Apache expose port 80 อยู่และ Container MySQL expose port 3306 ซึ่งเรียกอันนี้ว่า Container Port โดย user ได้ทำการ map Host Port 8080 ไปที่ Container Apache Port 80 และ map Host Port 6603 ไปที่ Container MySQL Port 3306</p>
+<p>ดังนั้นโดยผลลัพธ์ user สามารถเข้าถึง Apache ได้ด้วย Host Port 8080 (e.g. localhost:8080) และ MySQL ได้ด้วย Host Port 6603 นั่นเอง (e.g. localhost:6603)</p>
+<blockquote>
+<p>นอกจากนี้ ถ้าอยากให้แต่ละ Container คุยหากันได้ ทั้งสองอันจะต้องอยู่ใน <strong>Network</strong> อันเดียวกัน</p>
+</blockquote>
+<!-- ############################################# -->
+<h2 id="design-for-security">Design for Security</h2>
+<p>from Martin Fowler</p>
+<ol>
+<li>
+<p>Reject unexpected form input</p>
+<ol>
+<li>Untrusted input
+<ol>
+<li>ใช้ form หรือไม่ และใช่ HTTPS หรือเปล่า</li>
+<li>ส่ง data ไม่คาดฝันจาก curl ได้ป่าว</li>
+</ol>
+</li>
+<li>Input Validation
+<ol>
+<li>ได้ตรวจสอบ input ก่อนใช้งานหรือเปล่า</li>
+<li>ถ้า input fail ต้องแสดงยังไง บอก user ว่าอะไร</li>
+</ol>
+</li>
+<li>In Practice (Blacklisting)
+<ol>
+<li>ทำ blacklist อันไหนอันตราย reject ให้หมด</li>
+</ol>
+</li>
+<li>In Summary
+<ol>
+<li>ทำ whitelist ถ้าทำได้</li>
+<li>ถ้าไม่ได้ให้ blacklist</li>
+<li>ให้มีการแจ้งเตือนเมื่อถูกบุกรุก</li>
+<li>พยายาม reject bad input ให้เร็วที่สุด</li>
+<li>ไม่งั้นอาจโดน <strong>XSS (Cross Site Scripting)</strong> ได้</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Encode HTML output</p>
+<ol>
+<li>การ render markup ที่ไม่ถูกต้องจะเกี่ยวกับความปลอดภัยด้วย</li>
+<li>ควรจะทำการ encode อักขระต่าง ๆ ให้เหมาะสม<pre class="hljs"><code><div>document.getElementById('name') = 'Sandra Day O' Connor' // unescapted string
+</div></code></pre>
+</li>
+<li>Caution and caveat (ข้อควรระวังและข้อแม้)
+<ol>
+<li>เลือก framework ที่เกี่ยวกัย safe output function</li>
+<li>เอา output ดิบ ๆ ไป encode ก่อน</li>
+</ol>
+</li>
+<li>In Summary
+<ol>
+<li>ส่งออกข้อมูลที่ encode ใฟ้ถูกต้อง</li>
+<li>ใช้ framework ที่สนับสนุน</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Bind parameters for database queries</p>
+<ol>
+<li>
+<p>ระวังข้อมูลถูกขโมยผ่าน input ที่อันตราย</p>
+<pre class="hljs"><code><div>String query = <span class="hljs-string">"INSERT INTO students (last_name, first_name) VALUES ('"</span> + lastName + <span class="hljs-string">"','"</span> + firstName + <span class="hljs-string">"')'"</span>;
+</div></code></pre>
+<p>ถ้า firstName เป็น <code>Robert'); DROP TABLE students; --</code> table student ก็จะหายไปเลย เรียกว่า <strong>SQL injection</strong></p>
+</li>
+<li>
+<p>Parameter Binding</p>
+<pre class="hljs"><code><div>PreparedStatement stmt = <span class="hljs-string">"INSERT INTO students (last_name, first_name) VALUES (?, ?)'"</span>;
+
+stmt.setString(<span class="hljs-number">1</span>, lastName) <span class="hljs-comment">// binding</span>
+stmt.setString(<span class="hljs-number">2</span>, firstName) <span class="hljs-comment">// binding</span>
+</div></code></pre>
+<p>clean and safe code</p>
+</li>
+<li>
+<p>Common Misconceptions</p>
+<ol>
+<li>บาง statment ยังเป้นช่องทางอันตรายอยู่เช่น <code>$where</code></li>
+</ol>
+</li>
+<li>
+<p>In Summary</p>
+<ol>
+<li>หลีกเลี่ยงการสร้างคำสั่ง SQL / NoSQL จาก input ตรง ๆ</li>
+<li>ให้ทำ parameter binding</li>
+<li>อย่าคิดว่า ORM ปลอดภัย 100%</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Protech Data in transits</p>
+<ol>
+<li>
+<p>ระหว่าง Client &amp; Server ถ้าไม่มีการเข้ารหัสอาจเกิดปัญหาได้เช่น</p>
+<ol>
+<li>ถูกดักจับข้อมูล</li>
+<li>ถูกรุกรานแบบ man-in-th-middle (MITM)</li>
+<li>อาจจะโดนจาก Free WIFI ได้</li>
+</ol>
+</li>
+<li>
+<p>อาจเพิ่มความปลอดภัยได้จาก</p>
+<ol>
+<li>TLS (Transport Laver Secure)</li>
+<li>HTTPS ซึ่งต้องไปขอ server certificate -&gt; ได้จาก Registration Authority -&gt; Certificate Agent แล้วจะได้ certificate, public key, and private key แล้วเก็บไว้ใน Server จากนั้นเวลามี request จาก Client, Server จะส่ง signed data ที่ถูก encrypt ด้วย private key ไปให้ Client แล้วให้ Client ไปถาม Verification Authority ว่าตรงกับที่มีข้อมูล public key ของ Server ในนั้นไหม</li>
+</ol>
+<p><img src="https://doubleoctopus.com/wp-content/uploads/2021/08/Certificate-Authority-Secret-double-octopus-1.png" alt=""></p>
+<ol>
+<li>CA มีหลายระดับ
+<ol>
+<li>Domain validation - ถูกสุด ไว้ดูว่าเราเป็นเจ้าของ domain จริงป่าว</li>
+<li>Organization validation</li>
+<li>Extened validation</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>ใช้ HTTPS กับทุกที่</p>
+</li>
+<li>
+<p>HSTS (HTTP Strict Transport Secure)</p>
+<ol>
+<li>ใช้เพื่อให้บังคับให้ Browser ส่ง request มาผ่าน HTTPS เท่านั้น</li>
+<li>หลาย ๆ browser ฉลาดพอที่จะเปลี่ยน HTTP เป็น HTTPS ให้เอง</li>
+<li>ใข้แล้วยกเลิกกลางคันไม่ได้ ต้องรอหมดอายุ</li>
+</ol>
+</li>
+<li>
+<p>Protect Cookie</p>
+<ol>
+<li>Browser หลาย ๆ อันบังคับให้รับส่ง Cookie ด้วย HTTPS แล้ว</li>
+<li>ใส่ option <code>Secure</code>, <code>HttpOnly</code> เพื่อให้ส่งผ่าน HTTPS และ ไม่ให้ javascript ดึงข้อมูล Cookie ได้ตามลำดับ</li>
+</ol>
+</li>
+<li>
+<p>Cache Control</p>
+<ol>
+<li><code>no-cache</code> คือต้อง revalidate ทุกครั้งที่จะใช้</li>
+<li><code>no-store</code> คือไม่ต้องเก็บเลย</li>
+<li><code>must-revaludate</code> คือ local ใช้ได้จนกระทั่งหมดอายุแล้วค่อย revalidate</li>
+</ol>
+</li>
+<li>
+<p>Verify security</p>
+<ol>
+<li><a href="https://www.ssllabs.com/ssltest">ssllab</a></li>
+</ol>
+</li>
+<li>
+<p>In Summary</p>
+<ol>
+<li>HTTPS everywhere</li>
+<li>HSTS if possible</li>
+<li>ได้ certificate จาก CA ที่น่าเชื่อถือ</li>
+<li>เก็บ private key ให้ดีสุด ๆ</li>
+<li>อย่าลืม Cookie Secure</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Hash and salt username / password</p>
+<ol>
+<li>Always hash your password</li>
+<li>เติม salt (เติมหน้า password) ให้ bruce force ยาก ๆ</li>
+<li>OAuth ก็ใช้ได้</li>
+<li>OWASP แนะนำว่า password ไม่ควรเกิน 100 อักขระ</li>
+</ol>
+</li>
+<li>
+<p>Authentication and Authorization</p>
+<ol>
+<li>Authentication คือการยืนยันตัวตน</li>
+<li>Authorization คือการตรวจสอบว่าผู้ใช้คนนั้นมีสิทธิหรือเปล่า</li>
+<li>Reauthenticate จำเป็นสำหรับอะไรที่ sensitive เช่น โอนเงินต้องใส่ password ใหม่</li>
+<li>ถ้า username / password ผิด อย่าบอกว่าผิดอะไร</li>
+<li>ป้องกันการ Bruce force ด้วย</li>
+<li>อย่า Hard code password ลง database!!</li>
+</ol>
+</li>
+<li>
+<p>Protect User Session</p>
+<ol>
+<li>อย่า expose session id</li>
+<li>Protect Cookies</li>
+<li>Manage session life cycle - คือต้องมีการเกิด/แก่/เจ็บ/ตาย ภายในเวลาเท่าไร</li>
+</ol>
+</li>
+</ol>
+<!-- ############################################# -->
+<h2 id="software-testing">Software Testing</h2>
+<blockquote>
+<p><strong>Testing</strong> คือกระบวนการเพื่อดูว่าเป็นไปตาม requirement หรือเปล่า ตรงกับความคาดหวังหรือเปล่า</p>
+</blockquote>
+<p>Test Case ประกอบไปด้วย input และ expected output</p>
+<blockquote>
+<p><strong>Error (Mistake)</strong> หมายถึงสิ่งที่ software developer เข้าใจผิดหรือพลาดไป</p>
+</blockquote>
+<blockquote>
+<p><strong>Fault/Defect/Bug</strong> หมายถึงความผิดพลาดที่แสดงออกมาจาก Software</p>
+</blockquote>
+<h3 id="white-box-testing">White-box Testing</h3>
+<p>มีอีกชื่อว่า glass-box / structural testing</p>
+<p>คือเราจะ<strong>เห็นโครงสร้าง</strong>ของ Code ทั้งหมด และสร้าง test case <strong>ตามที่เห็น</strong></p>
+<h4 id="coverage-criteria">Coverage Criteria</h4>
+<ol>
+<li>Statement coverage - statement (คำสั่ง) ถูก execute เท่าไรจากทั้งหมด</li>
+<li>Branch coverage - ทุก branch จะต้อง traverse อย่างน้อย 1 ครั้ง (ทุก ๆ true / false ของทุก decision จะต้องถูก exercise อย่างน้อย 1 ครั้ง)</li>
+<li>Path coverage - ทุก possible path จากเริ่มไแจบ จะต้องถูก execute อย่างน้อย 1 ครั้ง</li>
+</ol>
+<h4 id="control-flow-graph">Control Flow Graph</h4>
+<ol>
+<li>Circle (node) - program statements (รวบได้บางกรณี)</li>
+<li>Arrtow (edge) - flow of control คือ execute node นี้แล้วไปไหนต่อ</li>
+<li>Regoin - บริเวณที่ถูกล้อมโดย node และ edge</li>
+</ol>
+<p><img src="https://www.researchgate.net/profile/Kostas-Kontogiannis/publication/4065402/figure/fig5/AS:668826706395151@1536472121671/Example-of-Control-Flow-Graph.png" alt=""></p>
+<h5 id="mccabes-cyclomatic-complexity-c">McCabe's Cyclomatic Complexity (C)</h5>
+<blockquote>
+<p>C = #edges - #nodes + 2</p>
+</blockquote>
+<blockquote>
+<p>C = #regions + 1</p>
+</blockquote>
+<p>C คือควาซับซ้อนของ code ยิ่งซับซ้อนมาก ยิ่ง test ยาก
+C คือ lower bound number ของ independent path (ทางเดินที่มีอย่างน้อย 1 edge ที่ยังไม่เคยถูก traverse มาก่อน)</p>
+<blockquote>
+<p>White-box ไม่สามารถดูว่ามันทำงานได้ตาม requirement หรือไม่</p>
+</blockquote>
+<h3 id="black-box-testing">Black-box Testing</h3>
+<p>คือเราจะ<strong>ไม่เห็นโครงสร้าง</strong>ของ Code เลย และสร้าง test case ตาม <strong>requirement</strong></p>
+<h4 id="equivalence-classes-partitioning">Equivalence classes partitioning</h4>
+<p>การแบ่ง input / ouptut (ส่วนมากเป็น input) ออกเป็น set ของ equivalence class เช่น แบ่ง input เป็น 3 class ดังนี้ แล้วเลือกของมาแค่ 1 element ใน class มา test</p>
+<pre class="hljs"><code><div>EC: X &lt; 0 (Invalid)
+EC: X &gt; 200 (Invalid)
+EC: 0 &lt;= X &lt;= 200 (Valid)
+</div></code></pre>
+<h4 id="boundary-value-analysis">Boundary value analysis</h4>
+<p>เอาค่า &quot;ริมขอบ&quot; มาใช้เป็นตัว test ได้แก่ <code>min-</code>, <code>min</code>, <code>min+</code>, <code>max-</code>, <code>max</code>, <code>max+</code></p>
+<p>เช่นช่วงที่ valid อยู่ที่ 0 &lt;= x &lt;= 200 จะได้ค่า test ดังนี้ <code>min- = -1</code>, <code>min = 0</code>, <code>min+ = 1</code>, <code>max- = 199</code>, <code>max = 200</code>, <code>max+ = 201</code></p>
+<h4 id="decision-table">Decision Table</h4>
+<p>ประกอบไปด้วย 4 ส่วน</p>
+<ol>
+<li>condition (condition stubs) - เงื่อนไข input ของ program</li>
+<li>rules (condition entires) - set ของค่าของ condition</li>
+<li>actions (action stubs) - ผลลัพธ์ที่คาดหวัง</li>
+<li>set of actions (action entires) - set ของค่าของ action</li>
+</ol>
+<p>มี 2 แบบ</p>
+<ol>
+<li>Limited entry คือ condition ทั้งหมดเป็น binary</li>
+<li>Extended entry คือ condition ทั้งหมดเป็นได้หลายค่า</li>
+</ol>
+<p><img src="https://i.ytimg.com/vi/aHWtsEKB5To/maxresdefault.jpg" alt=""></p>
+<p>ปล. ควรจะมี error message ใน action ด้วย</p>
+<blockquote>
+<p>Black-box ไม่สามารถดูว่ามีบางส่วนของ code ที่ยังไม่ได้ทดสอบหรือเปล่า</p>
+</blockquote>
+<h3 id="verification--validation">Verification &amp; Validation</h3>
+<blockquote>
+<p>Verification คือกิจกรรมที่ทำให้มั่นใจว่า program ถูก implement แล้วถูกต้อง แต่ไม่รู้ว่าตรงตาม requirement ไหม</p>
+</blockquote>
+<blockquote>
+<p>Validation คือกิจกรรมที่ทำให้มั่นใจว่า program เป็นไปตาม requirement</p>
+</blockquote>
+<blockquote>
+<p>Verification -&gt; build the product right</p>
+</blockquote>
+<blockquote>
+<p>Validation -&gt; build the right product</p>
+</blockquote>
+<h3 id="strategy">Strategy</h3>
+<h4 id="unit-test">Unit Test</h4>
+<p>คือการทดสอบหน่วนที่เล็กที่สุดที่จะทดสอบได้ เช่น function / class โดยในการทดสอบจะมีส่วนที่เรียกว่า <strong>driver</strong> มาเป็นตัวใช้ทดสอบ unit ที่เราสนใจ หาก unit นี้มีการ import unit อื่นมาใช้ เราจะเรียก unit พวกนั้นว่า <strong>stub</strong> ซึ่งจะต้องทำการ mock ก่อน</p>
+<h4 id="integration-test">Integration Test</h4>
+<p>คือการทดสอบเมื่อเอา unit หลาย ๆ อันมารวมกัน</p>
+<ol>
+<li>Incremental Approaches
+<ol>
+<li><strong>top-down</strong> - จะเริ่มทำการทดสอบจากข้างบนก่อน โดยมีทั้งแบบ depth first และ breadth first โดยค่อย ๆ เริ่มที่หน่วย ๆ แบบ incremental (เริ่มจาก A จากนั้น AB จากนั้น ABC)</li>
+<li><strong>bottom-up</strong> - ให้เทสเป็น cluster แล้วค่อย test จากล่างขึ้นบน จากนั้นค่อยมา integrate กันแล้ว test จากล่างขึ้นบนอีกที</li>
+<li><strong>sandwich</strong> - ทำ top-down และ bottom-up สลับกันแล้วมาชนกันตรงกลาง</li>
+</ol>
+</li>
+</ol>
+<h4 id="system-testing">System Testing</h4>
+<p>มีหลายอย่างมาก แต่ในวิชานี้เราจะสนใจ</p>
+<ol>
+<li>Requirement-based Functional Tests - จะเป็นการ demonstrate ว่าทุกฟังก์ชันทำงานได้ตาม requirement ของระบบ</li>
+<li>Performance Capability Tests - คือการทดสอบข้อจำกัดด้านประสิทธิภาพของระบบว่าตรงกับ requirement หรือไม่ เช่น Long runner</li>
+<li>Stress or Volume Testing - จำลองว่าในสถาณการณ์ไม่ปกติ system จะพังไหม</li>
+<li>Recovery Testing - ถ้าระบบเราพังไปแล้ว จะสามารถกู้กลับมาได้หรือเปล่า</li>
+<li>Security Testing - เอา Access Table มาดูแล้วทดสอบว่า ผู้ใช้ที่มีสิทธิเท่านี้เข้าฟังก์ชันนี้ได้หรือไม่</li>
+</ol>
+<h5 id="requirement-based-functional-tests">Requirement-based Functional Tests</h5>
+<p>จะเป็นการ demonstrate ว่าทุกฟังก์ชันทำงานได้ตาม requirement ของระบบ</p>
+<table>
+<thead>
+<tr>
+<th>Req. No.</th>
+<th>Req. Desc</th>
+<th>Test Case ID</th>
+<th>staus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>ชำระเงิน</td>
+<td>87,88,89</td>
+<td>P, F, P</td>
+</tr>
+<tr>
+<td>2</td>
+<td>จองเวลาเรียน</td>
+<td>81-88,102</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="acceptance-testing">Acceptance Testing</h4>
+<p>คือจะทำเมื่อจะส่งมอบให้กับ Client แล้วโดยเอา test case จาก System Testing มาแสดงให้ Client เห็น ด้วยข้อมูลจริง ซึ่งจะต้องแสดงให้เห็นความสามารถของระบบ จะเสร็จสิ้นเมื่อลูกค้าพอใจ</p>
+<p>ปล.​ test นี้จะทำเมื่อมี <strong>&quot;ผู้ว่าจ้าง&quot;</strong> (Facebook / Microsoft ไม่ต้องทำ)</p>
+<h4 id="alpha-test">Alpha Test</h4>
+<p>ทำบนฝั่ง developer โดยมร interact กับ user</p>
+<h4 id="beta-test">Beta Test</h4>
+<p>ทำบนฝั่ง consumer มี interact กับ user</p>
+<h4 id="regression-test">Regression Test</h4>
+<p>คือการรัน test ใหม่ทั้งหมด เพื่อป้องกันว่า change ที่เกิดขึ้นจะไม่ไปพังของเก่าที่เคย test ผ่านไปแล้ว</p>
+<!-- ############################################# -->
+<h2 id="software-configuration-mangement">Software Configuration Mangement</h2>
+<blockquote>
+<p>Configuration ในที่นี้หมายถึงองค์ประกอบ</p>
+</blockquote>
+<p>จะเป็นเรื่องเกี่ยวกับ <strong>&quot;Change&quot;</strong> โดย SCM activities จะมีดังนี้</p>
+<ol>
+<li>Identify Change - ระบุให้ได้ว่า change เกิดขึ้นที่ไหน</li>
+<li>Control Change - ควบคุม change</li>
+<li>Ensure that Change is implemented - เอา change ที่เกิดขึ้นไป implement</li>
+<li>Report Change - แจ้งว่ามี change เกิดขึ้น</li>
+</ol>
+<blockquote>
+<p>SCM เกิดตั้งแต่วันแรกของ project จนถึงก่อนส่งมอบ
+SM เกิดหลังส่งมอบ</p>
+</blockquote>
+<h3 id="sources-of-changes">Sources of Changes</h3>
+<ol>
+<li>อาจเกิดจากฝั่ง Bussiness หรือ Marketing เพราะสถานการณ์ใด ๆ</li>
+<li>อาจเกิดจากฝั่ง Customer</li>
+<li>อาจเกิดจากการเปลี่ยนแปลงขององค์กรของเราหรือลูกค้า</li>
+<li>อาจเกิดจาก Budget หรือ Scheduling constraint</li>
+</ol>
+<h3 id="baselines">Baselines</h3>
+<p>คือ Specification หรือ Work Product ที่เกิดขึ้นระหว่างที่เราทำระหว่าง process หรือตาม milestone และต้องถูก FTR (Formal Technical Review) ด้วย QA อย่างเป็นทางการ เห็นพ้องต้องกัน</p>
+<blockquote>
+<p>แต่ Milestone != Baseline เพราะต้อง FTR ก่อน</p>
+</blockquote>
+<blockquote>
+<p>Baseline != deliverable work product ขึ้นอยู่กับว่าจะส่งมอบหรือไม่</p>
+</blockquote>
+<h3 id="software-configuration-items">Software Configuration Items</h3>
+<p>อะไรก็ตามท่ี่ถูกผลิดมาระหว่าง Software Engineering Process ที่เราต้อง Control เพราะอาจจะมี Change เกิดขึ้นได้</p>
+<blockquote>
+<p>เช่น Project Plan, Requirement Spec, Source Code เป็นต้น</p>
+</blockquote>
+<blockquote>
+<p>อะไรที่ไม่ใช่ SCIs เช่น Memo, Private Note</p>
+</blockquote>
+<h3 id="baseline-scis">Baseline SCIs</h3>
+<p>กระบวนการที่ทำให้ SCI กลายเป็น Baseline</p>
+<p><img src="http://www.expertsmind.com/CMSImages/358_Baseline SCI.png" alt=""></p>
+<blockquote>
+<p>Project Database คือถังที่คนอื่น ๆ สามารถเอาไปใช้วานต่อได้ ถ้าอยากเอามาแก้ไขต้อง extract Baseline ก่อน</p>
+</blockquote>
+<h3 id="identification-of-object-in-the-software-configuration">Identification of Object in the Software Configuration</h3>
+<p>SCI มีอยู่ 2 types ได้แก่</p>
+<ol>
+<li>Basic Object - Unit of text</li>
+<li>Aggregate Object - กลุ่มของ Basic object หรือ Aggregate Object</li>
+</ol>
+<blockquote>
+<p>ต้องระบุ name, type, description และ identifier (version) Major.Minor.Patch</p>
+</blockquote>
+<h3 id="change-control-process">Change Control Process</h3>
+<ol>
+<li>Change request from user</li>
+<li>Developer evaluate</li>
+<li>Generate change report</li>
+<li>Change control authority decides (Yes / No) ?</li>
+<li>If yes, make the Change</li>
+<li>Review/Audit the change</li>
+<li>Establish &quot;baseline&quot; for testing</li>
+</ol>
+<h3 id="software-configuration-audit">Software Configuration Audit</h3>
+<p>เป็นการตรวจสอบกระบวนการว่าเป็นไปตามขั้นตอนหรือไม่ ไม่ใช่อยู่ ๆ ก็ change เลย</p>
+<!-- ############################################# -->
+<h2 id="software-maintenance">Software Maintenance</h2>
+<p>เกิดหลังจากการส่งมอบ Software</p>
+<p>Focus 4 อย่างใหญ่ ๆ</p>
+<ol>
+<li>ควบคุมหรือคอยเช็ค system day-to-day</li>
+<li>ควบคุมหรือคอยเช็คการแก้ไข system</li>
+<li>ทำให้ system สมบูรณ์มากขึ้น</li>
+<li>ป้องกันไม่ให้เกิดบัคขึ้น</li>
+</ol>
+<h3 id="corrective-maintenace">Corrective Maintenace</h3>
+<p>เพื่อควบคุมหรือเช็ค system แบบวันต่อวัน ซึ่งหากเกิดปัญหาจะต้องไปหาสาเหตุ และจากนั้นก็แก้ไข code เท่าที่จำเป็น โดยทั่วไปก็จะเป้นการแก้ไข <strong>เอาหน้ารอด</strong> ไปก่อนไม่ใช่ best fix เดี๋ยวระยะยาวจะไปแก้อีกที</p>
+<blockquote>
+<p>ต้องทำให้เสร็จ</p>
+</blockquote>
+<h3 id="adaptive-maintenace">Adaptive Maintenace</h3>
+<p>ถ้าเจอปัญหาแล้วต้องรื้ออะไรบางอย่าง ซึ่งกระทบหลาย ๆ จุด ซึ่งเป็นการ change เพื่อจัดการ error ให้เรียบร้อย (มองว่าเป็นการปรับปรุงก็ได้)</p>
+<h3 id="perfective-maintenace">Perfective Maintenace</h3>
+<p>คือการแก้ไขเพื่อให้ system มีความสมบูรณ์มากขึ้นเพื่อให้ง่ายต่อ developer และดีต่อ user ในอนาคต เช่นการเพิ่ม log จะได้หา error ได้เร็วขึ้นในอนาคต</p>
+<h3 id="preventive-maintenace">Preventive Maintenace</h3>
+<p>คือเรารู้ว่าแล้วว่าจุดนี้อาจจะเกิดบัคได้ในอนาคตเพราะ test ไม่ครบทุกกรณี เราเลยรีบตาม <strong>เก็บกวาด</strong> ให้เรียบร้อยก่อนเกิด bug ในอนาคต</p>
+<h3 id="who-perform-maintenance">Who perform maintenance</h3>
+<p>ถ้าเป็นทีมเดิมที่ทำ system นี้ แม้ว่าจะคุ้นเคยกับ system แต่ก็อาจจะเกิดอาการ &quot;มั่นใจมากเกินไป&quot; ทำให้บางที้เราก็ไม่ค่อยคิดว่าจะเกิดบัค</p>
+<p>คนที่เกี่ยวข้องทั้งหมด</p>
+<ul>
+<li>user, operator หรือ customer</li>
+</ul>
+<p>โดยต้องมีคุณสมบัติดังนี้</p>
+<ul>
+<li>เข้าใจ system</li>
+<li>รู้ว่า document ไหนอยู่ที่ไหน</li>
+<li>สามารถหา failure ได้</li>
+<li>และอื่น ๆ</li>
+</ul>
+<!-- ############################################# -->
+<h2 id="map-to-code">Map to code</h2>
+<p>จะแปลงจาก Diagram ไปเป็น Code</p>
+<h3 id="optimizing-the-object-desing-model">Optimizing the Object Desing Model</h3>
+<ol>
+<li>optimize ส่วนที่เป็นเกี่ยวกับ path ที่ซ้ำซ้อน อันที่ใช้บ่อย ๆ ต้อง path ไม่ยาวมาก</li>
+<li>many-to-many เยอะไปไหม สามารถยุบรวมได้หรือไม่ (เหมือนหากุญแจในพวงกุญแจ)
+<ol>
+<li>พยายามลด Many-to-Many เป็น Many-to-One</li>
+<li>แก้โดยการใช้ Modify association คือเพิ่ม index ในด้านที่เป็น many (Hashing)</li>
+</ol>
+</li>
+<li>attributes อยู่ไม่ถูกที่
+<ol>
+<li>แก้โดยการยุบ class / ย้าย attributes ไปรวมใน class ที่เรียก attributes แทน</li>
+</ol>
+</li>
+<li>Collapsing Object คือเปลี่ยน objects ให้เป็น attributes (รวบ object)</li>
+<li>บางที object ใหญ่มาก แต่เราใช้นิดเดียว อาจจะ delay/skeleton ก่อนจนกว่า actual conent จะมา (เช่นรูปใหญ่มากแต่เราอยากดูแค่ผ่าน ๆ ก็ให้มันแสดง thumbnail ก่อน) โดยใช้ Proxy Design Pattern</li>
+<li>Caching expensive-computation result เก็บอะไรที่คำนวณหนัก ๆ ไว้เป็น private attributes</li>
+</ol>
+<h3 id="mapping-association-to-collections">Mapping Association to Collections</h3>
+<ol>
+<li>Unidirectional One-to-One</li>
+</ol>
+<pre><code class="language-mermaid"><div class="mermaid">flowchart LR
+   Advertiser == 1-1 ==> Account
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Advertiser</span> </span>{
+  <span class="hljs-keyword">private</span> Account account; <span class="hljs-comment">// consider here</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Advertiser</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">this</span>.account = <span class="hljs-keyword">new</span> Account();
+  }
+}
+</div></code></pre>
+<ol start="2">
+<li>Bidirectional One-to-One</li>
+</ol>
+<pre><code class="language-mermaid"><div class="mermaid">flowchart LR
+   Advertiser <== 1-1 ==> Account
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Advertiser</span> </span>{
+  <span class="hljs-keyword">private</span> Account account; <span class="hljs-comment">// consider here</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Advertiser</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">this</span>.account = <span class="hljs-keyword">new</span> Account(<span class="hljs-keyword">this</span>);
+  }
+}
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Account</span> </span>{
+  <span class="hljs-keyword">private</span> Advertiser advertiser; <span class="hljs-comment">// consider here</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Account</span><span class="hljs-params">(Advertiser owner)</span> </span>{
+    <span class="hljs-keyword">this</span>.advertiser = owner;
+  }
+}
+</div></code></pre>
+<ol start="3">
+<li>Bidirectional One-to-Many</li>
+</ol>
+<pre><code class="language-mermaid"><div class="mermaid">flowchart LR
+   Advertiser <== 1-* ==> Account
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">// One side</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Advertiser</span> </span>{
+  <span class="hljs-keyword">private</span> Set accounts; <span class="hljs-comment">// consider here</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Advertiser</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">this</span>.accounts = <span class="hljs-keyword">new</span> HashSet();
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">addAccount</span><span class="hljs-params">(Account a)</span> </span>{
+    a.setOwner(<span class="hljs-keyword">this</span>);
+    <span class="hljs-keyword">this</span>.accounts.add(a);
+  }
+}
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">// Many Side</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Account</span> </span>{
+  <span class="hljs-keyword">private</span> Advertiser owner; <span class="hljs-comment">// consider here</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Account</span><span class="hljs-params">(Advertiser owner)</span> </span>{
+    <span class="hljs-keyword">this</span>.owner = owner;
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">setOwner</span><span class="hljs-params">(Advertiser newOwner)</span> </span>{
+    <span class="hljs-keyword">if</span> (newOwner == owner) <span class="hljs-keyword">return</span>;
+    <span class="hljs-keyword">this</span>.owner.removeAccount(<span class="hljs-keyword">this</span>);
+    newOwner.addAccount(<span class="hljs-keyword">this</span>);
+    <span class="hljs-keyword">this</span>.owner = newOwner;
+  }
+}
+</div></code></pre>
+<ol start="4">
+<li>Bidirectional Many-to-Many</li>
+</ol>
+<pre><code class="language-mermaid"><div class="mermaid">flowchart LR
+   Tournament <== * ordered -* ==> Player
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Tournament</span> </span>{
+  <span class="hljs-keyword">private</span> List players; <span class="hljs-comment">// consider here, List for "ordered"</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Tournament</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">this</span>.players = <span class="hljs-keyword">new</span> ArrayList();
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">addPlayer</span><span class="hljs-params">(Player p)</span> </span>{
+    <span class="hljs-keyword">if</span>(player.contains(p)) <span class="hljs-keyword">return</span>
+    player.add(p);
+    p.addTournament(<span class="hljs-keyword">this</span>);
+  }
+}
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Player</span> </span>{
+  <span class="hljs-keyword">private</span> Set tournaments; <span class="hljs-comment">// consider here</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Account</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">this</span>.tournaments = <span class="hljs-keyword">new</span> HashSet();
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">addTournament</span><span class="hljs-params">(Tournament t)</span> </span>{
+    <span class="hljs-keyword">if</span>(tournaments.contains(t)) <span class="hljs-keyword">return</span>
+    tournaments.add(t);
+    tournament.addPlayer(<span class="hljs-keyword">this</span>);
+  }
+}
+</div></code></pre>
+<blockquote>
+<p>Qualified association คือการทำให้ด้านที่เป็น Many ด้านหนึ่งกลายเป็น One</p>
+</blockquote>
+<ol>
+<li>Qualified Association</li>
+</ol>
+<p>From</p>
+<pre><code class="language-mermaid"><div class="mermaid">flowchart LR
+   League <== *-* ==> Player
+</div></code></pre>
+<p>To (Qualified Association on League)</p>
+<pre><code class="language-mermaid"><div class="mermaid">flowchart LR
+   League <== nickname *-0..1 ==> Player
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">League</span> </span>{
+  <span class="hljs-keyword">private</span> Map players; <span class="hljs-comment">// consider here</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Tournament</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">this</span>.players = <span class="hljs-keyword">new</span> Map();
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">addPlayer</span><span class="hljs-params">(String nickName, Player p)</span> </span>{
+    <span class="hljs-keyword">if</span>(player.contains(p)) <span class="hljs-keyword">return</span>
+    player.put(nickname, p); <span class="hljs-comment">// consider here, put to Map, use nickName as key</span>
+    p.addLeague(nickname, <span class="hljs-keyword">this</span>);
+  }
+}
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Player</span> </span>{
+  <span class="hljs-keyword">private</span> Map leagues; <span class="hljs-comment">// consider here</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Account</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">this</span>.leagues = <span class="hljs-keyword">new</span> Map();
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">addTournament</span><span class="hljs-params">(String nickName, League l)</span> </span>{
+    <span class="hljs-keyword">if</span>(leagues.containsKey(l)) <span class="hljs-keyword">return</span>
+    leagues.put(l, nickName); <span class="hljs-comment">// consider here</span>
+    l.addPlayer(nickName, <span class="hljs-keyword">this</span>);
+  }
+}
+</div></code></pre>
+<ol start="6">
+<li>Association Class into Object and Two Binary Associations</li>
+</ol>
+<p><img src="https://slidetodoc.com/presentation_image/8df4989e713db49a45d557f0b26aea29/image-14.jpg" alt=""></p>
+<h3 id="summary">Summary</h3>
+<ol>
+<li>ทำ Optimization ก่อน อาจใช้ Bad Smell / Design Pattern (e.g. Proxy Pattern) มาช่วย</li>
+<li>เริ่มทำ Map to Code
+<ol>
+<li>Class structure ต้องตั้งชื่อให้เหมาะสมและง่าย
+<ol>
+<li>class name</li>
+<li>attributes</li>
+<li>method</li>
+<li>visibility</li>
+</ol>
+</li>
+<li>Class association
+<ol>
+<li>Bi/Uni-directional 1-1</li>
+<li>1-to-many</li>
+<li>many-to-many - ใช้ Qualified Association มาแก้ให้เห็น 1-to-many</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="uml-profile-for-rest-api">UML Profile for REST API</h2>
+<p>ที่เราเรียนจะเป็น SparxSystem</p>
+<p><img src="https://i.stack.imgur.com/E5njO.png" alt=""></p>
+<blockquote>
+<p>Application หมายถึง จุดเริ่มต้น</p>
+</blockquote>
+<blockquote>
+<p>Resource หมายถึง ทรัพยากรใน Application นี้ที่ทำหน้าที่บริการอะไรสักอย่าง เช่น GET POST</p>
+</blockquote>
+<blockquote>
+<p>Path หมายถึง Path name</p>
+</blockquote>
+<blockquote>
+<p>Representation หมายถึง โครงสร้างข้อมูลที่ Resource อ้างถึง</p>
+</blockquote>
+
+</body>
+</html>
